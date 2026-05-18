@@ -1,12 +1,12 @@
 # API MVC
 
-Projeto criado em nest.js com arquitetura MVC, com o professor cleverson
+Projeto criado em Node.js com arquitetura MVC, com o professor cleverson
 
 ---
 
 ## Tecnologias
 
--> Nest.js
+-> Node.js
 
 -> Express
 
