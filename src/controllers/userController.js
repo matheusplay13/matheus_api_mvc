@@ -23,3 +23,25 @@ exports.delete = async(req, res) => {
     await user.destroy();
     res.json({ message: 'Usuário deletado com sucesso' });
 }
+
+exports.login = async (req, res) => {
+  const { email, senha } = req.body;
+
+  try {
+    const user = await User.findOne({ where: { email } });
+
+    if (!user || user.senha !== senha) {
+      return res.status(401).json({ message: 'Email ou senha inválidos' });
+    }
+
+    res.json({
+      message: 'Login realizado com sucesso',
+      user
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: 'Erro no servidor', error });
+  }
+};
+
+
